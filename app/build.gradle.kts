@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    implementation("com.sap.customercheckout:ENV:2.17.3")
+    implementation("com.sap.customercheckout:ENV:2.16.2")
     // implementation("org.slf4j.slf4j-log4j12:1.8.0-beta4")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
 
