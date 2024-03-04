@@ -68,9 +68,11 @@ public class CouponsAddon extends BasePlugin implements ReceiptChangeListener {
         
     }
 
+    //this event when you add item into transaction
     public  void onSalesItemAddedToReceipt(com.sap.scco.ap.pos.dao.CDBSession dbSession, com.sap.scco.ap.pos.entity.ReceiptEntity receipt, java.util.List<com.sap.scco.ap.pos.entity.SalesItemEntity> salesItems, java.math.BigDecimal quantity) {
         CalculateTax(receipt,salesItems.get(0));
     }
+    //this event here when you updating ite price, qty etc...
     public void onSalesItemUpdated(com.sap.scco.ap.pos.dao.CDBSession dbSession, com.sap.scco.ap.pos.entity.ReceiptEntity receipt, com.sap.scco.ap.pos.entity.SalesItemEntity newSalesItem, java.math.BigDecimal quantity) {
         CalculateTax(receipt,newSalesItem);
 
