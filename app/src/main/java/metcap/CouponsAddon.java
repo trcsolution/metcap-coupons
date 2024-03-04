@@ -53,6 +53,8 @@ public class CouponsAddon extends BasePlugin implements ReceiptChangeListener {
         // var taxAmount=java.math.BigDecimal.valueOf(4);
         // salesItems.get(0).setTaxAmount(taxAmount);
         salesItem.setTaxRate(BigDecimal.valueOf(1));
+
+        //Use that tax rate tyope to change tax code
         //salesItem.setTaxRateTypeCode()
         // calculationPosService.recalculateReceipt(receipt);
         calculationPosService.calculate(receipt, EntityActions.CHECK_CONS);
