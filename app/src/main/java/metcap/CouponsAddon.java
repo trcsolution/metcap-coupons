@@ -49,13 +49,20 @@ public class CouponsAddon extends BasePlugin implements ReceiptChangeListener {
 
     void CalculateTax(com.sap.scco.ap.pos.entity.ReceiptEntity receipt,com.sap.scco.ap.pos.entity.SalesItemEntity salesItem)
     {
+        //This function clear tax items for the sales item
          salesItem.removeAllTaxItems();
+
+         // 2 methods to change item tax
+         //1- change tax amount
         // var taxAmount=java.math.BigDecimal.valueOf(4);
         // salesItems.get(0).setTaxAmount(taxAmount);
+        //2- change tax rate
         salesItem.setTaxRate(BigDecimal.valueOf(1));
 
-        //Use that tax rate tyope to change tax code
+        //Use this function to change tax rate code
         //salesItem.setTaxRateTypeCode()
+
+        //now we need recalculate our transaction
         // calculationPosService.recalculateReceipt(receipt);
         calculationPosService.calculate(receipt, EntityActions.CHECK_CONS);
         
